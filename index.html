@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colombia SOS — Agregador de iniciativas</title>
+  <meta name="description" content="Todas las iniciativas de ayuda tras el terremoto en Colombia, en un solo lugar. Filtra por lo que necesitas: recibir ayuda, donar o ser voluntario." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23e4ff54%22/><text x=%2250%22 y=%2272%22 font-size=%2260%22 text-anchor=%22middle%22 font-family=%22Helvetica,Arial,sans-serif%22 font-weight=%22bold%22>S</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead__row">
+      <span class="kicker">Colombia SOS</span>
+      <span class="kicker kicker--right" id="meta-updated">—</span>
+    </div>
+    <h1 class="headline">
+      Todas las iniciativas de ayuda,<br />
+      <span class="hl">en un solo lugar</span>.
+    </h1>
+    <p class="lede">
+      Mapas SOS, férulas impresas en 3D, donaciones por zona, guías de seguros.
+      Un agregador ciudadano para que ninguna iniciativa se quede solo en un video
+      de Instagram — y para que encuentres la tuya en segundos.
+    </p>
+  </header>
+
+  <section class="stats" aria-label="Resumen">
+    <div class="stat">
+      <span class="stat__number" id="stat-total">—</span>
+      <span class="stat__label">iniciativas activas</span>
+    </div>
+    <div class="stat">
+      <span class="stat__number" id="stat-verified">—</span>
+      <span class="stat__label">verificadas por el equipo</span>
+    </div>
+    <div class="stat">
+      <span class="stat__number" id="stat-zones">—</span>
+      <span class="stat__label">zonas cubiertas</span>
+    </div>
+    <div class="stat stat--dark">
+      <span class="stat__label stat__label--top">¿Tienes una iniciativa?</span>
+      <a class="btn btn--light" id="submit-btn"
+         href="https://github.com/nicoalma/colombia-sos-dashboard/issues/new?title=Nueva%20iniciativa&labels=propuesta"
+         target="_blank" rel="noopener">Proponerla aquí →</a>
+      <span class="stat__note">Se revisa antes de publicarse</span>
+    </div>
+  </section>
+
+  <section class="filters" aria-label="Filtros">
+    <div class="filters__group">
+      <span class="kicker">Prioridad 1 · ¿Quién eres?</span>
+      <div class="chips" id="audience-chips" role="group" aria-label="Filtrar por perfil">
+        <button class="chip is-active" data-audience="todos">Todas</button>
+        <button class="chip" data-audience="afectado">Necesito ayuda</button>
+        <button class="chip" data-audience="donante">Quiero donar</button>
+        <button class="chip" data-audience="voluntario">Quiero ser voluntario</button>
+        <button class="chip" data-audience="organizacion">Soy una organización</button>
+      </div>
+    </div>
+    <div class="filters__row">
+      <label class="select-wrap">
+        <span class="kicker">Categoría</span>
+        <select id="category-select"><option value="todas">Todas</option></select>
+      </label>
+      <label class="select-wrap">
+        <span class="kicker">Zona</span>
+        <select id="zone-select"><option value="todas">Todas</option></select>
+      </label>
+      <label class="select-wrap select-wrap--grow">
+        <span class="kicker">Buscar</span>
+        <input type="search" id="search-input" placeholder="férulas, seguro, albergue…" />
+      </label>
+    </div>
+  </section>
+
+  <main>
+    <div class="list-head">
+      <span class="kicker" id="results-count">—</span>
+      <span class="kicker kicker--right">Estado de la información</span>
+    </div>
+    <section class="cards" id="cards" aria-live="polite"></section>
+    <p class="empty" id="empty-state" hidden>
+      Nada por aquí con esos filtros. Prueba ampliando la búsqueda —
+      o <a href="https://github.com/nicoalma/colombia-sos-dashboard/issues/new?title=Nueva%20iniciativa&labels=propuesta" target="_blank" rel="noopener">propón una iniciativa</a>.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Colombia SOS</strong> es un agregador ciudadano. Verifica siempre la información
+      directamente con cada iniciativa antes de donar o desplazarte.
+      Datos de demostración — <span class="hl">pendientes de verificación final</span>.
+    </p>
+    <p class="footer__meta">Hecho con datos abiertos · <a href="data/initiatives.json">initiatives.json</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

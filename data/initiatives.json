@@ -1,0 +1,227 @@
+{
+  "event": {
+    "name": "Terremoto en Colombia",
+    "date": "2026-08-08",
+    "description": "Agregador ciudadano de iniciativas de ayuda, donación y voluntariado tras el sismo. Datos de demostración: reemplazar con información verificada."
+  },
+  "updatedAt": "2026-08-14",
+  "initiatives": [
+    {
+      "id": "sos-mapa-001",
+      "title": "Mapa SOS de llamados de auxilio",
+      "summary": "Mapa colaborativo que detecta y ubica llamados de auxilio publicados en redes sociales, para que rescatistas y voluntarios lleguen donde más se necesita.",
+      "category": "sos",
+      "audiences": ["afectado", "voluntario", "organizacion"],
+      "zones": ["Nacional"],
+      "organizer": { "name": "Colectivo de tecnólogos voluntarios", "type": "colectivo" },
+      "links": [
+        { "type": "mapa", "url": "#", "label": "Ver el mapa" },
+        { "type": "formulario", "url": "#", "label": "Reportar un SOS" }
+      ],
+      "needs": ["Voluntarios para verificar reportes", "Difusión"],
+      "offers": ["Ubicación de emergencias en tiempo casi real"],
+      "status": "activa",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "Sitio web de la iniciativa" },
+      "tags": ["mapa", "redes sociales", "rescate"],
+      "createdAt": "2026-08-09",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "ferulas-3d-001",
+      "title": "Red de impresión 3D de férulas",
+      "summary": "Makers con impresoras 3D producen férulas y soportes para heridos, coordinando entregas con hospitales y puestos de salud.",
+      "category": "salud",
+      "audiences": ["afectado", "voluntario", "donante"],
+      "zones": ["Bogotá", "Medellín", "Cali"],
+      "organizer": { "name": "Comunidad maker Colombia", "type": "colectivo" },
+      "links": [
+        { "type": "instagram", "url": "#", "label": "Instagram de la red" },
+        { "type": "formulario", "url": "#", "label": "Sumar tu impresora" }
+      ],
+      "needs": ["Filamento PETG", "Impresoras 3D", "Mensajería para entregas"],
+      "offers": ["Férulas y soportes gratuitos para heridos"],
+      "status": "activa",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-13", "checkedBy": "equipo editorial", "source": "Video de Instagram + contacto directo" },
+      "tags": ["impresión 3D", "salud", "makers"],
+      "createdAt": "2026-08-10",
+      "updatedAt": "2026-08-13"
+    },
+    {
+      "id": "donaciones-zonas-001",
+      "title": "Donaciones por zona afectada",
+      "summary": "Directorio de campañas de donación organizadas por municipio y vereda, con cuentas oficiales y metas de recaudo transparentes.",
+      "category": "donaciones",
+      "audiences": ["donante"],
+      "zones": ["Nacional"],
+      "organizer": { "name": "Alianza de fundaciones locales", "type": "ong" },
+      "links": [
+        { "type": "web", "url": "#", "label": "Ver campañas" }
+      ],
+      "needs": ["Donaciones monetarias"],
+      "offers": ["Canal directo y auditado hacia cada zona"],
+      "status": "activa",
+      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-12", "checkedBy": "equipo editorial", "source": "Video de TikTok" },
+      "tags": ["donaciones", "transparencia"],
+      "createdAt": "2026-08-10",
+      "updatedAt": "2026-08-12"
+    },
+    {
+      "id": "seguro-hipoteca-001",
+      "title": "Guía: cómo aplicar el seguro si tu casa estaba hipotecada",
+      "summary": "Recurso paso a paso para reclamar el seguro de terremoto asociado al crédito hipotecario: qué cubre, a quién llamar y qué documentos preparar.",
+      "category": "legal",
+      "audiences": ["afectado"],
+      "zones": ["Nacional"],
+      "organizer": { "name": "Abogados voluntarios", "type": "colectivo" },
+      "links": [
+        { "type": "web", "url": "#", "label": "Leer la guía" },
+        { "type": "whatsapp", "url": "#", "label": "Consultas por WhatsApp" }
+      ],
+      "needs": ["Abogados voluntarios para consultas"],
+      "offers": ["Asesoría gratuita sobre seguros hipotecarios"],
+      "status": "activa",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "Documento público" },
+      "tags": ["seguros", "hipoteca", "legal"],
+      "createdAt": "2026-08-11",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "albergues-001",
+      "title": "Red de albergues temporales",
+      "summary": "Listado de albergues habilitados con cupos disponibles, requisitos de ingreso y necesidades de cada punto.",
+      "category": "albergue",
+      "audiences": ["afectado", "voluntario", "donante"],
+      "zones": ["Zona epicentro", "Municipios aledaños"],
+      "organizer": { "name": "Gestión del riesgo municipal", "type": "gobierno" },
+      "links": [
+        { "type": "web", "url": "#", "label": "Ver albergues y cupos" },
+        { "type": "telefono", "url": "#", "label": "Línea de atención" }
+      ],
+      "needs": ["Colchonetas", "Kits de aseo", "Voluntarios por turnos"],
+      "offers": ["Alojamiento temporal y alimentación"],
+      "status": "activa",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "Canal oficial" },
+      "tags": ["albergue", "alojamiento"],
+      "createdAt": "2026-08-09",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "acopio-suministros-001",
+      "title": "Centros de acopio de suministros",
+      "summary": "Puntos de recolección de agua, alimentos no perecederos, medicamentos y herramientas, con lista viva de lo que sí hace falta (y lo que ya no).",
+      "category": "suministros",
+      "audiences": ["donante", "voluntario"],
+      "zones": ["Bogotá", "Medellín", "Bucaramanga", "Zona epicentro"],
+      "organizer": { "name": "Cruz Roja seccional + voluntariados", "type": "ong" },
+      "links": [
+        { "type": "web", "url": "#", "label": "Puntos y horarios" },
+        { "type": "instagram", "url": "#", "label": "Lista viva de necesidades" }
+      ],
+      "needs": ["Agua potable", "Medicamentos", "Linternas y pilas"],
+      "offers": ["Logística de recolección y transporte a zona"],
+      "status": "activa",
+      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-13", "checkedBy": "equipo editorial", "source": "Historias de Instagram" },
+      "tags": ["acopio", "logística"],
+      "createdAt": "2026-08-09",
+      "updatedAt": "2026-08-13"
+    },
+    {
+      "id": "voluntarios-medicos-001",
+      "title": "Registro de voluntarios de salud",
+      "summary": "Formulario para que médicos, enfermeros, psicólogos y paramédicos se inscriban y sean asignados a puestos de atención según especialidad.",
+      "category": "salud",
+      "audiences": ["voluntario", "organizacion"],
+      "zones": ["Zona epicentro"],
+      "organizer": { "name": "Secretaría de Salud + universidades", "type": "gobierno" },
+      "links": [
+        { "type": "formulario", "url": "#", "label": "Inscribirme como voluntario" }
+      ],
+      "needs": ["Personal de salud con disponibilidad"],
+      "offers": ["Coordinación y asignación de turnos"],
+      "status": "activa",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-12", "checkedBy": "equipo editorial", "source": "Comunicado oficial" },
+      "tags": ["salud", "voluntariado"],
+      "createdAt": "2026-08-10",
+      "updatedAt": "2026-08-12"
+    },
+    {
+      "id": "mascotas-001",
+      "title": "Rescate y hogar de paso para animales",
+      "summary": "Red que rescata mascotas y animales heridos en zonas afectadas, y conecta con hogares de paso y donación de alimento.",
+      "category": "mascotas",
+      "audiences": ["afectado", "voluntario", "donante"],
+      "zones": ["Zona epicentro", "Municipios aledaños"],
+      "organizer": { "name": "Fundaciones animalistas", "type": "ong" },
+      "links": [
+        { "type": "instagram", "url": "#", "label": "Reportar / adoptar" },
+        { "type": "whatsapp", "url": "#", "label": "Línea de rescate" }
+      ],
+      "needs": ["Hogares de paso", "Alimento y medicinas veterinarias"],
+      "offers": ["Rescate y atención veterinaria"],
+      "status": "activa",
+      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-11", "checkedBy": "equipo editorial", "source": "Video de TikTok" },
+      "tags": ["animales", "rescate"],
+      "createdAt": "2026-08-11",
+      "updatedAt": "2026-08-11"
+    },
+    {
+      "id": "apoyo-psicologico-001",
+      "title": "Línea de primeros auxilios psicológicos",
+      "summary": "Atención psicológica gratuita por teléfono y WhatsApp para personas afectadas, familiares y rescatistas.",
+      "category": "salud",
+      "audiences": ["afectado", "voluntario"],
+      "zones": ["Nacional"],
+      "organizer": { "name": "Colegio de psicólogos voluntarios", "type": "colectivo" },
+      "links": [
+        { "type": "telefono", "url": "#", "label": "Llamar a la línea" },
+        { "type": "whatsapp", "url": "#", "label": "Escribir por WhatsApp" }
+      ],
+      "needs": ["Psicólogos voluntarios"],
+      "offers": ["Contención emocional gratuita"],
+      "status": "activa",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-13", "checkedBy": "equipo editorial", "source": "Contacto directo" },
+      "tags": ["salud mental"],
+      "createdAt": "2026-08-10",
+      "updatedAt": "2026-08-13"
+    },
+    {
+      "id": "personas-reportadas-001",
+      "title": "Buscador de personas reportadas",
+      "summary": "Base de datos ciudadana para reportar y buscar personas con las que se perdió contacto, cruzada con listados de albergues y hospitales.",
+      "category": "informacion",
+      "audiences": ["afectado"],
+      "zones": ["Nacional"],
+      "organizer": { "name": "Voluntarios de datos", "type": "colectivo" },
+      "links": [
+        { "type": "web", "url": "#", "label": "Buscar / reportar" }
+      ],
+      "needs": ["Voluntarios para depurar registros"],
+      "offers": ["Búsqueda centralizada de personas"],
+      "status": "activa",
+      "verification": { "state": "desactualizada", "lastCheckedAt": "2026-08-10", "checkedBy": "equipo editorial", "source": "Hilo en X" },
+      "tags": ["personas", "búsqueda"],
+      "createdAt": "2026-08-09",
+      "updatedAt": "2026-08-10"
+    },
+    {
+      "id": "reconstruccion-001",
+      "title": "Brigadas de evaluación estructural",
+      "summary": "Ingenieros voluntarios evalúan viviendas afectadas y emiten conceptos de habitabilidad para priorizar la reconstrucción.",
+      "category": "reconstruccion",
+      "audiences": ["afectado", "voluntario", "organizacion"],
+      "zones": ["Zona epicentro", "Municipios aledaños"],
+      "organizer": { "name": "Sociedad de ingenieros", "type": "ong" },
+      "links": [
+        { "type": "formulario", "url": "#", "label": "Solicitar evaluación" },
+        { "type": "formulario", "url": "#", "label": "Sumarme como ingeniero/a" }
+      ],
+      "needs": ["Ingenieros civiles y arquitectos voluntarios"],
+      "offers": ["Evaluación estructural gratuita"],
+      "status": "activa",
+      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-12", "checkedBy": "equipo editorial", "source": "Publicación de LinkedIn" },
+      "tags": ["vivienda", "ingeniería"],
+      "createdAt": "2026-08-12",
+      "updatedAt": "2026-08-12"
+    }
+  ]
+}

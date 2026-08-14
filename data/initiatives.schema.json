@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Colombia SOS — initiatives feed",
+  "type": "object",
+  "required": ["event", "updatedAt", "initiatives"],
+  "properties": {
+    "event": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "description": { "type": "string" }
+      }
+    },
+    "updatedAt": { "type": "string", "format": "date" },
+    "initiatives": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/initiative" }
+    }
+  },
+  "$defs": {
+    "initiative": {
+      "type": "object",
+      "required": ["id", "title", "summary", "category", "audiences", "zones", "organizer", "links", "status", "verification"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "title": { "type": "string" },
+        "summary": { "type": "string" },
+        "category": {
+          "enum": ["sos", "salud", "donaciones", "albergue", "suministros", "legal", "mascotas", "reconstruccion", "informacion"]
+        },
+        "audiences": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "enum": ["afectado", "donante", "voluntario", "organizacion"] }
+        },
+        "zones": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "organizer": {
+          "type": "object",
+          "required": ["name", "type"],
+          "properties": {
+            "name": { "type": "string" },
+            "type": { "enum": ["ciudadano", "colectivo", "ong", "gobierno", "empresa"] }
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "url", "label"],
+            "properties": {
+              "type": { "enum": ["web", "instagram", "tiktok", "whatsapp", "telefono", "formulario", "mapa"] },
+              "url": { "type": "string" },
+              "label": { "type": "string" }
+            }
+          }
+        },
+        "needs": { "type": "array", "items": { "type": "string" } },
+        "offers": { "type": "array", "items": { "type": "string" } },
+        "status": { "enum": ["activa", "pausada", "finalizada"] },
+        "verification": {
+          "type": "object",
+          "required": ["state", "lastCheckedAt"],
+          "properties": {
+            "state": { "enum": ["verificada", "por_verificar", "desactualizada"] },
+            "lastCheckedAt": { "type": "string", "format": "date" },
+            "checkedBy": { "type": "string" },
+            "source": { "type": "string" }
+          }
+        },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date" },
+        "updatedAt": { "type": "string", "format": "date" }
+      }
+    }
+  }
+}
