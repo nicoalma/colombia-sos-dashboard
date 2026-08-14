@@ -41,6 +41,6 @@ La separación `status` (¿la iniciativa existe?) vs `verification` (¿la inform
 - **Agente de seguimiento** que visite links/redes periódicamente y actualice `verification.state` y `lastCheckedAt`.
 - **Formulario de envío** → cada propuesta entra como PR o issue y se revisa antes de publicarse (el botón "Proponer iniciativa" ya existe en el UI).
 
-## ⚠️ Datos de demostración
+## ⚠️ Sobre los datos
 
-Las iniciativas incluidas son **ejemplos con enlaces de relleno** basados en casos reales mencionados; hay que reemplazarlas con datos verificados antes de publicar.
+Las iniciativas provienen de **fuentes públicas** (prensa, canales oficiales de alcaldías y ONG) recopiladas tras el sismo del 10 de agosto de 2026; cada entrada registra su fuente en `verification.source`. Por seguridad, **el feed nunca transcribe números de cuenta bancaria** — siempre enlaza a la página oficial o de prensa donde están publicados. Las entradas `por_verificar` esperan confirmación directa con la organización.

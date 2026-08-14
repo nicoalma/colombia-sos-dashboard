@@ -1,227 +1,323 @@
 {
   "event": {
-    "name": "Terremoto en Colombia",
-    "date": "2026-08-08",
-    "description": "Agregador ciudadano de iniciativas de ayuda, donación y voluntariado tras el sismo. Datos de demostración: reemplazar con información verificada."
+    "name": "Terremoto de Colombia — M7,4",
+    "date": "2026-08-10",
+    "description": "Sismo de magnitud 7,4 del 10 de agosto de 2026, con epicentro en San José del Palmar (Chocó) y afectación en Quibdó, Cali, Pereira, Manizales, Armenia, Buenaventura y decenas de municipios. Agregador ciudadano de iniciativas de ayuda, donación y voluntariado."
   },
   "updatedAt": "2026-08-14",
   "initiatives": [
     {
-      "id": "sos-mapa-001",
-      "title": "Mapa SOS de llamados de auxilio",
-      "summary": "Mapa colaborativo que detecta y ubica llamados de auxilio publicados en redes sociales, para que rescatistas y voluntarios lleguen donde más se necesita.",
+      "id": "gravitas-001",
+      "title": "Gravitas — plataforma IA de coordinación de ayuda",
+      "summary": "Plataforma que usa inteligencia artificial para organizar reportes ciudadanos, voluntarios y recursos, cruzando redes sociales (X/Twitter), grupos de WhatsApp, reportes oficiales y observación satelital. Permite consultar y reportar estructuras afectadas, acopios, albergues y necesidades puntuales, y registrarse como voluntario para ser asignado donde hace falta.",
       "category": "sos",
       "audiences": ["afectado", "voluntario", "organizacion"],
       "zones": ["Nacional"],
-      "organizer": { "name": "Colectivo de tecnólogos voluntarios", "type": "colectivo" },
+      "organizer": { "name": "Gravitas (iniciativa tecnológica ciudadana)", "type": "colectivo" },
       "links": [
-        { "type": "mapa", "url": "#", "label": "Ver el mapa" },
-        { "type": "formulario", "url": "#", "label": "Reportar un SOS" }
+        { "type": "web", "url": "https://www.elcolombiano.com/tecnologia/plataforma-ia-organiza-ayudas-voluntarios-recursos-terremoto-colombia-KC39918222", "label": "Conocer la plataforma (El Colombiano)" },
+        { "type": "web", "url": "https://impactotic.co/innovacion/innovacion-social/tecnologia-emergencia-colombia-ia-radio/", "label": "Cómo funciona (Impacto TIC)" }
       ],
-      "needs": ["Voluntarios para verificar reportes", "Difusión"],
-      "offers": ["Ubicación de emergencias en tiempo casi real"],
+      "needs": ["Voluntarios registrados (esperar activación, no autodesplegarse)"],
+      "offers": ["Coordinación de reportes SOS, voluntarios y recursos en tiempo casi real"],
       "status": "activa",
-      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "Sitio web de la iniciativa" },
-      "tags": ["mapa", "redes sociales", "rescate"],
-      "createdAt": "2026-08-09",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "El Colombiano e Impacto TIC" },
+      "tags": ["ia", "redes sociales", "mapa", "coordinación"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "terremoto-colombia-001",
+      "title": "Terremoto Colombia — plataforma ciudadana de reportes",
+      "summary": "Plataforma ciudadana gratuita y de código abierto para conectar reportes, recursos y equipos de respuesta durante la emergencia. Independiente y apartidista.",
+      "category": "sos",
+      "audiences": ["afectado", "voluntario", "organizacion"],
+      "zones": ["Nacional"],
+      "organizer": { "name": "Terremoto Colombia (voluntarios de tecnología)", "type": "colectivo" },
+      "links": [
+        { "type": "web", "url": "https://terremotocolombia.com", "label": "Entrar a la plataforma" }
+      ],
+      "needs": ["Difusión", "Voluntarios para verificar reportes"],
+      "offers": ["Conexión entre reportes de auxilio, recursos y equipos de respuesta"],
+      "status": "activa",
+      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "Búsqueda web (Portafolio / Noticias RCN)" },
+      "tags": ["open source", "reportes", "sos"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "mapa-contemos-001",
+      "title": "Mapa de ayuda — daños, albergues y acopios",
+      "summary": "Mapa abierto del terremoto con puntos de daño, albergues y centros de acopio en Cali, Pereira, Manizales, Armenia, Quibdó, Buenaventura y decenas de municipios más.",
+      "category": "informacion",
+      "audiences": ["afectado", "voluntario", "donante", "organizacion"],
+      "zones": ["Cali", "Pereira", "Manizales", "Armenia", "Quibdó", "Buenaventura", "Nacional"],
+      "organizer": { "name": "Contemos (comunidad de datos abiertos)", "type": "colectivo" },
+      "links": [
+        { "type": "mapa", "url": "https://mapa.contemos.org/", "label": "Abrir el mapa" }
+      ],
+      "needs": ["Reportes verificados de daños y puntos de ayuda"],
+      "offers": ["Ubicación de albergues, acopios y zonas afectadas"],
+      "status": "activa",
+      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "Búsqueda web" },
+      "tags": ["mapa", "datos abiertos"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "colombia-se-levanta-001",
+      "title": "Colombia Se Levanta — ayuda casa a casa",
+      "summary": "Red que conecta a personas afectadas con voluntarios que entregan ayuda directamente, casa por casa. El registro solo pide nombre y verificación de correo.",
+      "category": "suministros",
+      "audiences": ["afectado", "voluntario"],
+      "zones": ["Zona afectada"],
+      "organizer": { "name": "Colombia Se Levanta", "type": "colectivo" },
+      "links": [
+        { "type": "web", "url": "https://colombiaselevanta.com/", "label": "Pedir ayuda / ser voluntario" }
+      ],
+      "needs": ["Voluntarios con disponibilidad para entregas"],
+      "offers": ["Entrega directa de ayudas a hogares afectados"],
+      "status": "activa",
+      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "Búsqueda web" },
+      "tags": ["voluntariado", "entregas"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "cruz-roja-donaciones-001",
+      "title": "Cruz Roja Colombiana — #TodosPorColombia",
+      "summary": "Campaña oficial de la Cruz Roja Colombiana para donaciones económicas por la emergencia, con cuentas oficiales publicadas en sus canales (verifícalas siempre en la fuente antes de transferir). También coordina voluntariado a través de 'Quiero ser voluntario'.",
+      "category": "donaciones",
+      "audiences": ["donante", "voluntario"],
+      "zones": ["Nacional"],
+      "organizer": { "name": "Sociedad Nacional de la Cruz Roja Colombiana", "type": "ong" },
+      "links": [
+        { "type": "web", "url": "https://www.cruzrojacolombiana.org/", "label": "Canales oficiales de donación" },
+        { "type": "web", "url": "https://www.lafm.com.co/actualidad/terremto-colombia-donaciones-canales-oficiales-cruz-roja-407490", "label": "Cuentas publicadas (La FM)" }
+      ],
+      "needs": ["Donaciones económicas", "Voluntarios"],
+      "offers": ["Atención humanitaria en zona afectada"],
+      "status": "activa",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "La FM / El Tiempo / El Colombiano" },
+      "tags": ["donaciones", "oficial"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "cruz-roja-sangre-001",
+      "title": "Donación de sangre — bancos de la Cruz Roja",
+      "summary": "La Cruz Roja pidió reforzar las reservas de sangre para atender heridos. Puntos habilitados en Bogotá (Banco Nacional de Sangre, Av. Cra 68 #68B-31), Medellín, Cartagena, Villavicencio, Manizales, Armenia y Cali.",
+      "category": "salud",
+      "audiences": ["donante"],
+      "zones": ["Bogotá", "Medellín", "Cartagena", "Villavicencio", "Manizales", "Armenia", "Cali"],
+      "organizer": { "name": "Cruz Roja Colombiana", "type": "ong" },
+      "links": [
+        { "type": "web", "url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382", "label": "Puntos y requisitos (El Colombiano)" }
+      ],
+      "needs": ["Donantes de sangre (todos los tipos)"],
+      "offers": ["Recepción de donantes en 7 ciudades"],
+      "status": "activa",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "El Colombiano / Colombia.com" },
+      "tags": ["sangre", "salud"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "acopio-bogota-001",
+      "title": "Centros de acopio en Bogotá",
+      "summary": "La Alcaldía de Bogotá y la Cruz Roja habilitaron puntos de recepción de donaciones: Palacio de los Deportes (Calle 63 #59A-06) y puntos de la Cruz Roja en la U. Jorge Tadeo Lozano, Unicentro, estadio El Campín y su sede administrativa. Piden alimentos no perecederos no vencidos, agua y artículos de aseo.",
+      "category": "suministros",
+      "audiences": ["donante", "voluntario"],
+      "zones": ["Bogotá"],
+      "organizer": { "name": "Alcaldía de Bogotá + Cruz Roja Seccional Bogotá", "type": "gobierno" },
+      "links": [
+        { "type": "web", "url": "https://bogota.gov.co/mi-ciudad/seguridad/puntos-de-donacion-en-bogota-para-damnificados-terremoto-en-colombia", "label": "Puntos y horarios (bogota.gov.co)" },
+        { "type": "web", "url": "https://bogota.gov.co/mi-ciudad/ambiente/que-donar-y-no-donar-en-bogota-para-damnificados-terremoto-colombia", "label": "Qué donar y qué no" }
+      ],
+      "needs": ["Alimentos no perecederos", "Agua", "Artículos de aseo"],
+      "offers": ["Recepción y canalización de donaciones en especie"],
+      "status": "activa",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "bogota.gov.co (canal oficial)" },
+      "tags": ["acopio", "oficial"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "acopio-ciudades-001",
+      "title": "Centros de acopio por ciudad — guía nacional",
+      "summary": "Guías de prensa con el mapa completo de centros de acopio habilitados por ciudad (Bogotá, Medellín, Cali, Bucaramanga, Armenia y más), incluyendo bancos de alimentos en Manizales, Buenaventura y Dosquebradas.",
+      "category": "suministros",
+      "audiences": ["donante", "voluntario"],
+      "zones": ["Nacional"],
+      "organizer": { "name": "Alcaldías + Cruz Roja + bancos de alimentos", "type": "gobierno" },
+      "links": [
+        { "type": "web", "url": "https://www.eltiempo.com/datos/este-es-el-mapa-completo-de-los-centros-de-acopio-habilitados-en-colombia-para-ayudar-a-los-damnificados-del-terremoto-de-magnitud-7-3577654", "label": "Mapa completo (El Tiempo)" },
+        { "type": "web", "url": "https://www.infobae.com/colombia/2026/08/10/centros-de-acopio-habilitados-en-colombia-tras-el-terremoto-guia-por-ciudad-para-donar-y-ayudar-a-las-victimas/", "label": "Guía por ciudad (Infobae)" }
+      ],
+      "needs": ["Alimentos no perecederos", "Agua", "Kits de aseo"],
+      "offers": ["Puntos de entrega en las principales ciudades"],
+      "status": "activa",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "El Tiempo / Infobae / Cambio" },
+      "tags": ["acopio", "guía"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "choco-cuenta-001",
+      "title": "Gobernación del Chocó — cuenta oficial de ayuda",
+      "summary": "La Gobernación del Chocó habilitó una cuenta bancaria oficial de ayuda humanitaria para el departamento del epicentro. El número está publicado en los enlaces — verifícalo en la fuente antes de transferir.",
+      "category": "donaciones",
+      "audiences": ["donante"],
+      "zones": ["Chocó", "Quibdó"],
+      "organizer": { "name": "Gobernación del Chocó", "type": "gobierno" },
+      "links": [
+        { "type": "web", "url": "https://www.eltiempo.com/colombia/otras-ciudades/como-enviar-ayudas-para-los-damnificados-por-el-terremoto-de-7-4-en-choco-3577509", "label": "Cuenta oficial (El Tiempo)" },
+        { "type": "web", "url": "https://www.elcolombiano.com/colombia/donde-donar-choco-centros-acopio-cuentas-oficiales-terremoto-colombia-KB39837058", "label": "Dónde donar para el Chocó (El Colombiano)" }
+      ],
+      "needs": ["Donaciones monetarias"],
+      "offers": ["Canal oficial directo al departamento más afectado"],
+      "status": "activa",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "El Tiempo / El Colombiano" },
+      "tags": ["donaciones", "oficial", "chocó"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "banco-alimentos-001",
+      "title": "Bancos de alimentos — donación económica y en especie",
+      "summary": "El Banco de Alimentos de Bogotá y la red nacional reciben donaciones económicas (llave BRE-B publicada en su sitio) y alimentos. Bancos principales operando para la emergencia en Manizales, Buenaventura y Dosquebradas, con apoyo desde Medellín, Cali, Bogotá, Armenia, Ibagué y Bucaramanga.",
+      "category": "donaciones",
+      "audiences": ["donante", "organizacion"],
+      "zones": ["Nacional"],
+      "organizer": { "name": "Red de Bancos de Alimentos de Colombia", "type": "ong" },
+      "links": [
+        { "type": "web", "url": "https://www.bancodealimentos.org.co/", "label": "Banco de Alimentos de Bogotá" }
+      ],
+      "needs": ["Donaciones económicas", "Alimentos no perecederos"],
+      "offers": ["Logística alimentaria hacia la zona afectada"],
+      "status": "activa",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "El Tiempo / Impacto TIC" },
+      "tags": ["alimentos", "donaciones"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "globalgiving-001",
+      "title": "SOS Colombia — donaciones desde el exterior",
+      "summary": "Campaña en GlobalGiving para canalizar donaciones internacionales hacia la respuesta al terremoto. Útil para diáspora y donantes fuera de Colombia.",
+      "category": "donaciones",
+      "audiences": ["donante"],
+      "zones": ["Internacional"],
+      "organizer": { "name": "GlobalGiving (campaña SOS Colombia)", "type": "ong" },
+      "links": [
+        { "type": "web", "url": "https://www.globalgiving.org/", "label": "Donar desde el exterior" },
+        { "type": "web", "url": "https://www.telemundo.com/noticias/noticias-telemundo/desastres-naturales/asi-puede-ayudar-organizaciones-trabajando-ayuda-colombia-rcna591980", "label": "Organizaciones activas (Telemundo)" }
+      ],
+      "needs": ["Donaciones internacionales"],
+      "offers": ["Canal de donación en dólares con recibo"],
+      "status": "activa",
+      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "El Tiempo / Telemundo" },
+      "tags": ["internacional", "donaciones"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
+    },
+    {
+      "id": "seguro-hipoteca-001",
+      "title": "Guía: reclamar el seguro si tu casa estaba hipotecada",
+      "summary": "Todo crédito hipotecario en Colombia incluye seguro obligatorio de incendio y terremoto (art. 101 del Estatuto Orgánico del Sistema Financiero). El reclamo se hace ante la aseguradora (no el banco): describe los daños con fecha y lugar, conserva fotos y videos, y no repares ni deseches nada antes de recibir instrucciones. La indemnización paga primero la deuda; el excedente es del propietario. Hay que seguir pagando cuotas mientras se define el siniestro, salvo acuerdo con el banco.",
+      "category": "legal",
+      "audiences": ["afectado"],
+      "zones": ["Nacional"],
+      "organizer": { "name": "Fasecolda + prensa económica", "type": "empresa" },
+      "links": [
+        { "type": "web", "url": "https://www.portafolio.co/amp/economia/regiones/su-casa-tiene-seguro-contra-terremoto-fasecolda-aclara-quien-esta-protegido-500266", "label": "Guía de Fasecolda (Portafolio)" },
+        { "type": "web", "url": "https://www.infobae.com/colombia/2026/08/11/como-reclamar-el-seguro-de-su-propiedad-si-resulto-afectada-por-el-terremoto-en-colombia-fasecolda-explico/", "label": "Paso a paso del reclamo (Infobae)" },
+        { "type": "web", "url": "https://www.infobae.com/colombia/2026/08/12/el-terremoto-en-colombia-dejo-dudas-sobre-el-seguro-de-vivienda-de-miles-de-personas-que-pasa-con-los-creditos-que-todavia-no-pagaron-al-banco/", "label": "¿Y si aún debo al banco? (Infobae)" }
+      ],
+      "needs": [],
+      "offers": ["Orientación gratuita sobre el seguro de vivienda hipotecada"],
+      "status": "activa",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "Portafolio / Infobae / Fasecolda" },
+      "tags": ["seguros", "hipoteca", "vivienda"],
+      "createdAt": "2026-08-14",
       "updatedAt": "2026-08-14"
     },
     {
       "id": "ferulas-3d-001",
-      "title": "Red de impresión 3D de férulas",
-      "summary": "Makers con impresoras 3D producen férulas y soportes para heridos, coordinando entregas con hospitales y puestos de salud.",
+      "title": "Red de férulas impresas en 3D",
+      "summary": "Red de makers y emprendedores que ya produjo más de 20.000 férulas impresas en 3D para heridos del sismo, con diseños libres y termoformables (se moldean con agua caliente) compartidos por Ostec3D. Incluye férulas veterinarias para animales rescatados. Cualquier persona con impresora 3D puede sumarse.",
       "category": "salud",
       "audiences": ["afectado", "voluntario", "donante"],
-      "zones": ["Bogotá", "Medellín", "Cali"],
-      "organizer": { "name": "Comunidad maker Colombia", "type": "colectivo" },
+      "zones": ["Zona afectada", "Binacional (Colombia-Venezuela)"],
+      "organizer": { "name": "Comunidad maker (red binacional)", "type": "colectivo" },
       "links": [
-        { "type": "instagram", "url": "#", "label": "Instagram de la red" },
-        { "type": "formulario", "url": "#", "label": "Sumar tu impresora" }
+        { "type": "instagram", "url": "https://www.instagram.com/reel/DaHsrtURwoH/", "label": "Convocatoria a makers" },
+        { "type": "web", "url": "https://www.tiktok.com/@canal26argentina/video/7658374711944023303", "label": "La historia de la red (video)" }
       ],
-      "needs": ["Filamento PETG", "Impresoras 3D", "Mensajería para entregas"],
-      "offers": ["Férulas y soportes gratuitos para heridos"],
+      "needs": ["Impresoras 3D", "Filamento", "Logística de entrega"],
+      "offers": ["Férulas gratuitas para hospitales y brigadas", "Diseños libres para imprimir"],
       "status": "activa",
-      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-13", "checkedBy": "equipo editorial", "source": "Video de Instagram + contacto directo" },
-      "tags": ["impresión 3D", "salud", "makers"],
-      "createdAt": "2026-08-10",
-      "updatedAt": "2026-08-13"
+      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "Videos de la red maker (verificar pata colombiana)" },
+      "tags": ["impresión 3D", "makers", "salud"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
     },
     {
-      "id": "donaciones-zonas-001",
-      "title": "Donaciones por zona afectada",
-      "summary": "Directorio de campañas de donación organizadas por municipio y vereda, con cuentas oficiales y metas de recaudo transparentes.",
+      "id": "caminata-solidaridad-001",
+      "title": "Caminata de la Solidaridad 2026",
+      "summary": "La Fundación Solidaridad por Colombia destinará el 100 % del recaudo de la Caminata de la Solidaridad 2026 ('Solidarizarte: juntos podemos cambiar el mundo') a los damnificados del terremoto.",
       "category": "donaciones",
       "audiences": ["donante"],
-      "zones": ["Nacional"],
-      "organizer": { "name": "Alianza de fundaciones locales", "type": "ong" },
+      "zones": ["Bogotá", "Nacional"],
+      "organizer": { "name": "Fundación Solidaridad por Colombia", "type": "ong" },
       "links": [
-        { "type": "web", "url": "#", "label": "Ver campañas" }
+        { "type": "web", "url": "https://www.eltiempo.com/bogota/caminata-de-la-solidaridad-2026-destinara-el-100-de-su-recaudo-a-los-damnificados-por-el-fuerte-terremoto-de-magnitud-7-4-en-colombia-3578272", "label": "Inscripciones y detalles (El Tiempo)" }
       ],
-      "needs": ["Donaciones monetarias"],
-      "offers": ["Canal directo y auditado hacia cada zona"],
+      "needs": ["Inscripciones a la caminata"],
+      "offers": ["100 % del recaudo para los damnificados"],
       "status": "activa",
-      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-12", "checkedBy": "equipo editorial", "source": "Video de TikTok" },
-      "tags": ["donaciones", "transparencia"],
-      "createdAt": "2026-08-10",
-      "updatedAt": "2026-08-12"
-    },
-    {
-      "id": "seguro-hipoteca-001",
-      "title": "Guía: cómo aplicar el seguro si tu casa estaba hipotecada",
-      "summary": "Recurso paso a paso para reclamar el seguro de terremoto asociado al crédito hipotecario: qué cubre, a quién llamar y qué documentos preparar.",
-      "category": "legal",
-      "audiences": ["afectado"],
-      "zones": ["Nacional"],
-      "organizer": { "name": "Abogados voluntarios", "type": "colectivo" },
-      "links": [
-        { "type": "web", "url": "#", "label": "Leer la guía" },
-        { "type": "whatsapp", "url": "#", "label": "Consultas por WhatsApp" }
-      ],
-      "needs": ["Abogados voluntarios para consultas"],
-      "offers": ["Asesoría gratuita sobre seguros hipotecarios"],
-      "status": "activa",
-      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "Documento público" },
-      "tags": ["seguros", "hipoteca", "legal"],
-      "createdAt": "2026-08-11",
+      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "El Tiempo" },
+      "tags": ["evento", "recaudo"],
+      "createdAt": "2026-08-14",
       "updatedAt": "2026-08-14"
     },
     {
-      "id": "albergues-001",
-      "title": "Red de albergues temporales",
-      "summary": "Listado de albergues habilitados con cupos disponibles, requisitos de ingreso y necesidades de cada punto.",
-      "category": "albergue",
-      "audiences": ["afectado", "voluntario", "donante"],
-      "zones": ["Zona epicentro", "Municipios aledaños"],
-      "organizer": { "name": "Gestión del riesgo municipal", "type": "gobierno" },
-      "links": [
-        { "type": "web", "url": "#", "label": "Ver albergues y cupos" },
-        { "type": "telefono", "url": "#", "label": "Línea de atención" }
-      ],
-      "needs": ["Colchonetas", "Kits de aseo", "Voluntarios por turnos"],
-      "offers": ["Alojamiento temporal y alimentación"],
-      "status": "activa",
-      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "Canal oficial" },
-      "tags": ["albergue", "alojamiento"],
-      "createdAt": "2026-08-09",
-      "updatedAt": "2026-08-14"
-    },
-    {
-      "id": "acopio-suministros-001",
-      "title": "Centros de acopio de suministros",
-      "summary": "Puntos de recolección de agua, alimentos no perecederos, medicamentos y herramientas, con lista viva de lo que sí hace falta (y lo que ya no).",
+      "id": "artistas-ayuda-001",
+      "title": "Artistas movilizan ayuda directa",
+      "summary": "Cantantes colombianos activaron sus propias campañas: Blessd anunció el envío de 120 toneladas de ayuda humanitaria (alimentos, agua potable e higiene) a Quibdó, Pereira y Manizales; Carlos Vives, Francy y Jhonny Rivera canalizan donaciones y apoyo a comunidades golpeadas.",
       "category": "suministros",
-      "audiences": ["donante", "voluntario"],
-      "zones": ["Bogotá", "Medellín", "Bucaramanga", "Zona epicentro"],
-      "organizer": { "name": "Cruz Roja seccional + voluntariados", "type": "ong" },
+      "audiences": ["donante"],
+      "zones": ["Quibdó", "Pereira", "Manizales"],
+      "organizer": { "name": "Blessd, Carlos Vives y otros artistas", "type": "ciudadano" },
       "links": [
-        { "type": "web", "url": "#", "label": "Puntos y horarios" },
-        { "type": "instagram", "url": "#", "label": "Lista viva de necesidades" }
+        { "type": "web", "url": "https://www.infobae.com/colombia/2026/08/13/donaciones-centros-de-acopio-y-reconstruccion-de-viviendas-cantantes-colombianos-movilizan-ayuda-y-solidaridad-para-los-afectados-por-el-terremoto/", "label": "Las campañas (Infobae)" }
       ],
-      "needs": ["Agua potable", "Medicamentos", "Linternas y pilas"],
-      "offers": ["Logística de recolección y transporte a zona"],
+      "needs": ["Difusión"],
+      "offers": ["Envíos masivos de ayuda a zonas golpeadas"],
       "status": "activa",
-      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-13", "checkedBy": "equipo editorial", "source": "Historias de Instagram" },
-      "tags": ["acopio", "logística"],
-      "createdAt": "2026-08-09",
-      "updatedAt": "2026-08-13"
+      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "Infobae" },
+      "tags": ["artistas", "ayuda directa"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
     },
     {
-      "id": "voluntarios-medicos-001",
-      "title": "Registro de voluntarios de salud",
-      "summary": "Formulario para que médicos, enfermeros, psicólogos y paramédicos se inscriban y sean asignados a puestos de atención según especialidad.",
-      "category": "salud",
-      "audiences": ["voluntario", "organizacion"],
-      "zones": ["Zona epicentro"],
-      "organizer": { "name": "Secretaría de Salud + universidades", "type": "gobierno" },
-      "links": [
-        { "type": "formulario", "url": "#", "label": "Inscribirme como voluntario" }
-      ],
-      "needs": ["Personal de salud con disponibilidad"],
-      "offers": ["Coordinación y asignación de turnos"],
-      "status": "activa",
-      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-12", "checkedBy": "equipo editorial", "source": "Comunicado oficial" },
-      "tags": ["salud", "voluntariado"],
-      "createdAt": "2026-08-10",
-      "updatedAt": "2026-08-12"
-    },
-    {
-      "id": "mascotas-001",
-      "title": "Rescate y hogar de paso para animales",
-      "summary": "Red que rescata mascotas y animales heridos en zonas afectadas, y conecta con hogares de paso y donación de alimento.",
-      "category": "mascotas",
-      "audiences": ["afectado", "voluntario", "donante"],
-      "zones": ["Zona epicentro", "Municipios aledaños"],
-      "organizer": { "name": "Fundaciones animalistas", "type": "ong" },
-      "links": [
-        { "type": "instagram", "url": "#", "label": "Reportar / adoptar" },
-        { "type": "whatsapp", "url": "#", "label": "Línea de rescate" }
-      ],
-      "needs": ["Hogares de paso", "Alimento y medicinas veterinarias"],
-      "offers": ["Rescate y atención veterinaria"],
-      "status": "activa",
-      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-11", "checkedBy": "equipo editorial", "source": "Video de TikTok" },
-      "tags": ["animales", "rescate"],
-      "createdAt": "2026-08-11",
-      "updatedAt": "2026-08-11"
-    },
-    {
-      "id": "apoyo-psicologico-001",
-      "title": "Línea de primeros auxilios psicológicos",
-      "summary": "Atención psicológica gratuita por teléfono y WhatsApp para personas afectadas, familiares y rescatistas.",
-      "category": "salud",
-      "audiences": ["afectado", "voluntario"],
-      "zones": ["Nacional"],
-      "organizer": { "name": "Colegio de psicólogos voluntarios", "type": "colectivo" },
-      "links": [
-        { "type": "telefono", "url": "#", "label": "Llamar a la línea" },
-        { "type": "whatsapp", "url": "#", "label": "Escribir por WhatsApp" }
-      ],
-      "needs": ["Psicólogos voluntarios"],
-      "offers": ["Contención emocional gratuita"],
-      "status": "activa",
-      "verification": { "state": "verificada", "lastCheckedAt": "2026-08-13", "checkedBy": "equipo editorial", "source": "Contacto directo" },
-      "tags": ["salud mental"],
-      "createdAt": "2026-08-10",
-      "updatedAt": "2026-08-13"
-    },
-    {
-      "id": "personas-reportadas-001",
-      "title": "Buscador de personas reportadas",
-      "summary": "Base de datos ciudadana para reportar y buscar personas con las que se perdió contacto, cruzada con listados de albergues y hospitales.",
+      "id": "bengala-001",
+      "title": "Bengala",
+      "summary": "Iniciativa enviada por la comunidad (bengalacol.org). Descripción, alcance y zonas por confirmar directamente con la organización.",
       "category": "informacion",
-      "audiences": ["afectado"],
-      "zones": ["Nacional"],
-      "organizer": { "name": "Voluntarios de datos", "type": "colectivo" },
+      "audiences": ["afectado", "donante"],
+      "zones": ["Por confirmar"],
+      "organizer": { "name": "Bengala", "type": "colectivo" },
       "links": [
-        { "type": "web", "url": "#", "label": "Buscar / reportar" }
+        { "type": "web", "url": "https://www.bengalacol.org", "label": "Sitio de la iniciativa" }
       ],
-      "needs": ["Voluntarios para depurar registros"],
-      "offers": ["Búsqueda centralizada de personas"],
+      "needs": ["Información de la organización para completar la ficha"],
+      "offers": [],
       "status": "activa",
-      "verification": { "state": "desactualizada", "lastCheckedAt": "2026-08-10", "checkedBy": "equipo editorial", "source": "Hilo en X" },
-      "tags": ["personas", "búsqueda"],
-      "createdAt": "2026-08-09",
-      "updatedAt": "2026-08-10"
-    },
-    {
-      "id": "reconstruccion-001",
-      "title": "Brigadas de evaluación estructural",
-      "summary": "Ingenieros voluntarios evalúan viviendas afectadas y emiten conceptos de habitabilidad para priorizar la reconstrucción.",
-      "category": "reconstruccion",
-      "audiences": ["afectado", "voluntario", "organizacion"],
-      "zones": ["Zona epicentro", "Municipios aledaños"],
-      "organizer": { "name": "Sociedad de ingenieros", "type": "ong" },
-      "links": [
-        { "type": "formulario", "url": "#", "label": "Solicitar evaluación" },
-        { "type": "formulario", "url": "#", "label": "Sumarme como ingeniero/a" }
-      ],
-      "needs": ["Ingenieros civiles y arquitectos voluntarios"],
-      "offers": ["Evaluación estructural gratuita"],
-      "status": "activa",
-      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-12", "checkedBy": "equipo editorial", "source": "Publicación de LinkedIn" },
-      "tags": ["vivienda", "ingeniería"],
-      "createdAt": "2026-08-12",
-      "updatedAt": "2026-08-12"
+      "verification": { "state": "por_verificar", "lastCheckedAt": "2026-08-14", "checkedBy": "equipo editorial", "source": "Enviada por la comunidad" },
+      "tags": ["comunidad"],
+      "createdAt": "2026-08-14",
+      "updatedAt": "2026-08-14"
     }
   ]
 }
