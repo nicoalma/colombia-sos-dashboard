@@ -14,9 +14,9 @@ openwiki:
 
 ## GitHub Pages (`.github/workflows/pages.yml`)
 
-Every push to `main` (or a manual `workflow_dispatch`) uploads the repository root as a Pages artifact and deploys it. `actions/configure-pages` runs with `enablement: true`, so the first successful run turns Pages on by itself — no manual settings step. There is no build: the repo root *is* the site, which is why generated docs (`openwiki/`) being plain Markdown is harmless — they are just extra static files.
+Every push to `main` (or a manual `workflow_dispatch`) uploads the repository root as a Pages artifact and deploys it. There is no build: the repo root *is* the site, which is why generated docs (`openwiki/`) being plain Markdown is harmless — they are just extra static files.
 
-Note: Pages on a **private** repository requires a paid GitHub plan; on a free account, make the repository public or the deploy job will fail with an entitlement error.
+**One-time setup:** the Pages site must be created once by a human in **Settings → Pages → Build and deployment → Source: GitHub Actions**. The workflow's `GITHUB_TOKEN` cannot create it (the REST endpoint requires repository-administration permission, which is not grantable to workflow tokens — the run fails with `Resource not accessible by integration`). After that single click, every deploy is fully automatic. Pages on a **private** repository additionally requires a paid GitHub plan.
 
 ## OpenWiki updates (`.github/workflows/openwiki-update.yml`)
 
