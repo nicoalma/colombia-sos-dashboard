@@ -17,7 +17,6 @@ openwiki:
 | `app.js` | Fetch feed, derive filters/stats, filter+sort+render cards | [Architecture](architecture/overview.md) |
 | `data/initiatives.json` | Canonical initiatives feed (the "database" and future API) | [Data model](data-model.md) |
 | `data/initiatives.schema.json` | JSON Schema for the feed | [Data model](data-model.md) |
-| `.github/workflows/pages.yml` | Deploy repo root to GitHub Pages on push to `main` | [Deployment](operations/deployment.md) |
 | `.github/workflows/openwiki-update.yml` | Scheduled OpenWiki docs refresh → PR | [Deployment](operations/deployment.md) |
 | `README.md` | Human-facing project intro, data model summary, roadmap | — |
 | `AGENTS.md` / `CLAUDE.md` | Agent instructions with the OpenWiki managed block | — |

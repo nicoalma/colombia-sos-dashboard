@@ -13,7 +13,7 @@ python3 -m http.server 8000
 # → http://localhost:8000
 ```
 
-Compatible con GitHub Pages tal cual (Settings → Pages → deploy from branch).
+Desplegado en Vercel (framework preset "Other", sin build): cada push a `main` publica producción y cada PR genera una URL de preview.
 
 ## Modelo de datos
 

@@ -1,22 +1,22 @@
 ---
 type: Playbook
 title: Deployment & automation
-description: How the site deploys to GitHub Pages on push to main, and how the scheduled OpenWiki workflow keeps this wiki current via documentation PRs.
-tags: [operations, ci, github-pages]
+description: How the site deploys to Vercel on push to main, and how the scheduled OpenWiki workflow keeps this wiki current via documentation PRs.
+tags: [operations, ci, vercel]
 timestamp: 2026-08-14T00:00:00Z
 openwiki:
   roles: [operations, delivery]
-  source_paths: [.github/workflows/pages.yml, .github/workflows/openwiki-update.yml]
-  validation_commands: ["Actions tab → both workflows green after a push to main"]
+  source_paths: [.github/workflows/openwiki-update.yml]
+  validation_commands: ["Vercel dashboard → latest deployment green after a push to main"]
 ---
 
 # Deployment & automation
 
-## GitHub Pages (`.github/workflows/pages.yml`)
+## Vercel
 
-Every push to `main` (or a manual `workflow_dispatch`) uploads the repository root as a Pages artifact and deploys it. There is no build: the repo root *is* the site, which is why generated docs (`openwiki/`) being plain Markdown is harmless — they are just extra static files.
+The repository is imported as a Vercel project (framework preset "Other", no build command, output = repo root — the repo root *is* the site, which is why generated docs (`openwiki/`) being plain Markdown is harmless: they are just extra static files). Every push to `main` deploys production automatically, and **every pull request gets its own preview URL** — which is the review mechanism for the "propose an initiative → PR → review before merge" flow.
 
-**One-time setup:** the Pages site must be created once by a human in **Settings → Pages → Build and deployment → Source: GitHub Actions**. The workflow's `GITHUB_TOKEN` cannot create it (the REST endpoint requires repository-administration permission, which is not grantable to workflow tokens — the run fails with `Resource not accessible by integration`). After that single click, every deploy is fully automatic. Pages on a **private** repository additionally requires a paid GitHub plan.
+GitHub Pages was evaluated first and dropped: its first-time enablement needs a manual settings click (the workflow `GITHUB_TOKEN` lacks repository-administration permission), it has no PR previews, and it can never host the roadmap's API/MCP endpoints, which on Vercel are a matter of adding an `api/` directory.
 
 ## OpenWiki updates (`.github/workflows/openwiki-update.yml`)
 
