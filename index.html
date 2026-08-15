@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Colombia SOS — Agregador de iniciativas</title>
   <meta name="description" content="Todas las iniciativas de ayuda tras el terremoto en Colombia, en un solo lugar. Filtra por lo que necesitas: recibir ayuda, donar o ser voluntario." />
+  <!-- Social sharing (WhatsApp/Instagram/X). Ajustar el dominio si el proyecto de Vercel usa otro. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Colombia SOS — Todas las iniciativas de ayuda, en un solo lugar" />
+  <meta property="og:description" content="Mapas SOS, donaciones verificadas, albergues, guías de seguros y voluntariado tras el terremoto M7,4. Filtra por lo que necesitas." />
+  <meta property="og:url" content="https://colombia-sos-dashboard.vercel.app/" />
+  <meta property="og:image" content="https://colombia-sos-dashboard.vercel.app/og-image.png" />
+  <meta property="og:locale" content="es_CO" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23e4ff54%22/><text x=%2250%22 y=%2272%22 font-size=%2260%22 text-anchor=%22middle%22 font-family=%22Helvetica,Arial,sans-serif%22 font-weight=%22bold%22>S</text></svg>" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -42,7 +50,7 @@
     <div class="stat stat--dark">
       <span class="stat__label stat__label--top">¿Tienes una iniciativa?</span>
       <a class="btn btn--light" id="submit-btn"
-         href="https://github.com/nicoalma/colombia-sos-dashboard/issues/new?title=Nueva%20iniciativa&labels=propuesta"
+         href="https://github.com/nicoalma/colombia-sos-dashboard/issues/new?template=nueva-iniciativa.yml"
          target="_blank" rel="noopener">Proponerla aquí →</a>
       <span class="stat__note">Se revisa antes de publicarse</span>
     </div>
@@ -83,7 +91,7 @@
     <section class="cards" id="cards" aria-live="polite"></section>
     <p class="empty" id="empty-state" hidden>
       Nada por aquí con esos filtros. Prueba ampliando la búsqueda —
-      o <a href="https://github.com/nicoalma/colombia-sos-dashboard/issues/new?title=Nueva%20iniciativa&labels=propuesta" target="_blank" rel="noopener">propón una iniciativa</a>.
+      o <a href="https://github.com/nicoalma/colombia-sos-dashboard/issues/new?template=nueva-iniciativa.yml" target="_blank" rel="noopener">propón una iniciativa</a>.
     </p>
   </main>
 

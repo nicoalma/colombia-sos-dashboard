@@ -45,7 +45,54 @@ async function init() {
   populateSelect("category-select", categoriesIn(DATA.initiatives), (c) => CATEGORY_LABELS[c] || c);
   populateSelect("zone-select", zonesIn(DATA.initiatives), (z) => z);
   bindFilters();
+  const focusId = restoreFromURL();
   renderCards();
+  if (focusId) focusCard(focusId);
+}
+
+/* ---------- URL state: filtros compartibles y deep-links por iniciativa ---------- */
+
+function restoreFromURL() {
+  const p = new URLSearchParams(location.search);
+  const quien = p.get("quien");
+  if (quien && document.querySelector(`[data-audience="${CSS.escape(quien)}"]`)) {
+    state.audience = quien;
+    document.querySelectorAll("#audience-chips .chip").forEach((c) =>
+      c.classList.toggle("is-active", c.dataset.audience === quien));
+  }
+  const cat = p.get("cat");
+  if (cat && [...document.getElementById("category-select").options].some((o) => o.value === cat)) {
+    state.category = cat;
+    document.getElementById("category-select").value = cat;
+  }
+  const zona = p.get("zona");
+  if (zona && [...document.getElementById("zone-select").options].some((o) => o.value === zona)) {
+    state.zone = zona;
+    document.getElementById("zone-select").value = zona;
+  }
+  const q = p.get("q");
+  if (q) {
+    state.query = q.toLowerCase();
+    document.getElementById("search-input").value = q;
+  }
+  return p.get("i");
+}
+
+function syncURL() {
+  const p = new URLSearchParams();
+  if (state.audience !== "todos") p.set("quien", state.audience);
+  if (state.category !== "todas") p.set("cat", state.category);
+  if (state.zone !== "todas") p.set("zona", state.zone);
+  if (state.query) p.set("q", state.query);
+  const qs = p.toString();
+  history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+}
+
+function focusCard(id) {
+  const el = document.getElementById(`iniciativa-${id}`);
+  if (!el) return;
+  el.classList.add("card--focus");
+  el.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
 function categoriesIn(items) {
@@ -130,6 +177,7 @@ function renderCards() {
     `${results.length} ${results.length === 1 ? "iniciativa" : "iniciativas"}`;
   document.getElementById("empty-state").hidden = results.length > 0;
   container.replaceChildren(...results.map(cardEl));
+  syncURL();
 }
 
 function verificationRank(item) {
@@ -138,6 +186,7 @@ function verificationRank(item) {
 
 function cardEl(item) {
   const card = el("article", "card");
+  card.id = `iniciativa-${item.id}`;
 
   const main = el("div", "card__main");
   const title = el("h2", "card__title", item.title);
@@ -166,10 +215,36 @@ function cardEl(item) {
     if (link.url.startsWith("http")) { a.target = "_blank"; a.rel = "noopener"; }
     links.appendChild(a);
   }
-  side.append(status, links);
+  side.append(status, links, shareRow(item));
 
   card.append(main, meta, side);
   return card;
+}
+
+function shareRow(item) {
+  const row = el("div", "share");
+  const shareUrl = `${location.origin}${location.pathname}?i=${encodeURIComponent(item.id)}`;
+
+  const wa = el("a", "share__btn", "WhatsApp ↗");
+  wa.href = `https://wa.me/?text=${encodeURIComponent(`${item.title} · Colombia SOS\n${shareUrl}`)}`;
+  wa.target = "_blank";
+  wa.rel = "noopener";
+  wa.setAttribute("aria-label", `Compartir ${item.title} por WhatsApp`);
+
+  const copy = el("button", "share__btn", "Copiar enlace");
+  copy.type = "button";
+  copy.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      copy.textContent = "✓ Copiado";
+    } catch {
+      prompt("Copia el enlace:", shareUrl);
+    }
+    setTimeout(() => (copy.textContent = "Copiar enlace"), 2000);
+  });
+
+  row.append(wa, copy);
+  return row;
 }
 
 function metaLine(label, value) {

@@ -1,0 +1,65 @@
+name: Proponer una iniciativa
+description: Sugiere una iniciativa de ayuda para que aparezca en Colombia SOS (se revisa antes de publicarse).
+title: "Nueva iniciativa: "
+labels: ["propuesta"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por sumar! Completa lo que sepas — el equipo verifica antes de publicar.
+        **No incluyas números de cuenta bancaria aquí**: comparte el link oficial donde estén publicados.
+  - type: input
+    id: nombre
+    attributes:
+      label: Nombre de la iniciativa
+      placeholder: "Ej.: Red de férulas 3D"
+    validations:
+      required: true
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: ¿Qué hace y para quién?
+      placeholder: "Qué ofrece, a quién sirve, qué necesitan."
+    validations:
+      required: true
+  - type: dropdown
+    id: categoria
+    attributes:
+      label: Categoría
+      options: ["SOS y rescate", "Salud", "Donaciones", "Albergue", "Suministros", "Legal y seguros", "Animales", "Reconstrucción", "Información"]
+    validations:
+      required: true
+  - type: checkboxes
+    id: audiencias
+    attributes:
+      label: ¿A quién le sirve?
+      options:
+        - label: Personas afectadas
+        - label: Donantes
+        - label: Voluntarios
+        - label: Organizaciones
+  - type: input
+    id: zonas
+    attributes:
+      label: Zonas
+      placeholder: "Ej.: Quibdó, Cali, Nacional"
+    validations:
+      required: true
+  - type: input
+    id: organizador
+    attributes:
+      label: ¿Quién la organiza?
+      placeholder: "Nombre de la persona, colectivo, ONG o entidad"
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Links (web, Instagram, TikTok, WhatsApp…)
+      placeholder: "Un link por línea. Idealmente la fuente oficial."
+    validations:
+      required: true
+  - type: input
+    id: contacto
+    attributes:
+      label: Tu contacto (opcional, por si necesitamos verificar)

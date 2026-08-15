@@ -1,0 +1,57 @@
+name: Refresh initiatives data
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Twice a day: 07:00 and 19:00 Colombia time (UTC-5)
+    - cron: "0 12 * * *"
+    - cron: "0 0 * * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Anthropic SDK
+        run: npm install --no-save @anthropic-ai/sdk
+
+      - name: Check links
+        run: node scripts/check-links.mjs
+
+      - name: Verify and discover initiatives (Claude + web search)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/refresh-initiatives.mjs
+
+      - name: Validate feed
+        run: node scripts/validate.mjs data/initiatives.json
+
+      - name: Read PR body
+        id: summary
+        run: |
+          if [ -f refresh-summary.md ]; then
+            echo "body<<EOF" >> "$GITHUB_OUTPUT"
+            cat refresh-summary.md >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
+        with:
+          add-paths: data/initiatives.json
+          branch: data/refresh
+          commit-message: "datos: actualización automática de iniciativas"
+          title: "datos: actualización automática de iniciativas"
+          body: ${{ steps.summary.outputs.body || 'Actualización automática del feed.' }}
+          labels: datos-automaticos

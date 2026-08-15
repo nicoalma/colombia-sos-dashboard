@@ -35,11 +35,23 @@ Todo vive en `data/initiatives.json`, validable contra `data/initiatives.schema.
 
 La separación `status` (¿la iniciativa existe?) vs `verification` (¿la información está al día?) es deliberada: permite que un agente de IA revise periódicamente los links/redes y actualice `verification` sin tocar el contenido editorial.
 
-## Roadmap (ideas ya contempladas en el diseño)
+## Actualización automática 🤖
 
-- **Servidor MCP** que exponga `initiatives.json` como recurso consultable desde cualquier IA (el JSON ya es la API).
-- **Agente de seguimiento** que visite links/redes periódicamente y actualice `verification.state` y `lastCheckedAt`.
-- **Formulario de envío** → cada propuesta entra como PR o issue y se revisa antes de publicarse (el botón "Proponer iniciativa" ya existe en el UI).
+El feed **se mantiene solo** vía `.github/workflows/refresh-data.yml` (2 veces al día):
+
+1. `scripts/check-links.mjs` prueba cada link del feed (evidencia determinística).
+2. `scripts/refresh-initiatives.mjs` — Claude con búsqueda web verifica cada iniciativa y descubre nuevas. **Por diseño, la IA solo puede tocar `status`/`verification` y proponer nuevas entradas como `por_verificar`** — nunca modifica links, títulos ni resúmenes existentes (así una página comprometida no puede reescribir un link de donación).
+3. `scripts/validate.mjs` valida contra el esquema.
+4. Los cambios llegan como **PR con resumen** que un humano aprueba (y Vercel le genera preview).
+
+Requiere el secret `ANTHROPIC_API_KEY` (el mismo que usa OpenWiki).
+
+Las propuestas de la comunidad entran por el [formulario estructurado](https://github.com/nicoalma/colombia-sos-dashboard/issues/new?template=nueva-iniciativa.yml) y se revisan antes de publicarse.
+
+## Roadmap
+
+- **Servidor MCP** que exponga `initiatives.json` como recurso consultable desde cualquier IA (el JSON ya es la API; en Vercel basta agregar una carpeta `api/`).
+- **Bot que convierta issues de propuesta en PRs** con el registro ya formateado.
 
 ## ⚠️ Sobre los datos
 
